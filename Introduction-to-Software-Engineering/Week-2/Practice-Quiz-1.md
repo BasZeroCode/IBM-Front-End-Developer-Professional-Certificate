@@ -8,7 +8,7 @@
 
 2. **Which of the following technologies can you use to create websites that work across different web browsers?**
    - [x] C++
-   - [] JavaScript
+   - [ ] JavaScript
    - [ ] Java
    - [ ] CSS
 
