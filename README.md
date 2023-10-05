@@ -13,31 +13,31 @@ Welcome to the repository for my IBM Front-End Developer Professional Certificat
    - Brief description and key concepts learned.
 
 2. **Introduction to Web Development with HTML, CSS, JavaScript**
-   - [Course Link](replace-with-course2-link)
+   - [Course Link](https://www.coursera.org/learn/introduction-to-web-development-with-html-css-javacript?specialization=ibm-frontend-developer)
    - Brief description and key takeaways.
 
 3. **Getting Started with Git and GitHub**
-   - [Course Link](replace-with-course3-link)
+   - [Course Link](https://www.coursera.org/learn/getting-started-with-git-and-github?specialization=ibm-frontend-developer)
    - Brief description and key concepts learned.
 
 4. **Developing Cloud Native Applications**
-   - [Course Link](replace-with-course4-link)
+   - [Course Link](https://www.coursera.org/learn/developing-cloud-native-applications?specialization=ibm-frontend-developer)
    - Brief description and key takeaways.
 
 5. **Developing Front-End Apps with React**
-   - [Course Link](replace-with-course5-link)
+   - [Course Link](https://www.coursera.org/learn/developing-frontend-apps-with-react?specialization=ibm-frontend-developer)
    - Brief description and key concepts learned.
 
 6. **Designing User Interfaces and Experiences (UI/UX)**
-   - [Course Link](replace-with-course5-link)
+   - [Course Link](https://www.coursera.org/learn/designing-user-interfaces-and-experiences-uiux?specialization=ibm-frontend-developer)
    - Brief description and key concepts learned.
 
 7. **Intermediate Web and Front-End Development**
-   - [Course Link](replace-with-course5-link)
+   - [Course Link](https://www.coursera.org/learn/intermediate-web-and-front-end-development?specialization=ibm-frontend-developer)
    - Brief description and key concepts learned.
 
 7. **Front-End Development Capstone Project**
-   - [Course Link](replace-with-course5-link)
+   - [Course Link](https://www.coursera.org/learn/front-end-development-capstone-project?specialization=ibm-frontend-developer)
    - Brief description and key concepts learned.
 
 
@@ -54,7 +54,7 @@ Welcome to the repository for my IBM Front-End Developer Professional Certificat
 - HTML
 - CSS
 - JavaScript
-- [Any other relevant technologies]
+- React.js
 
 ## How to Run the Projects
 1. Clone this repository: `git clone https://github.com/your-username/IBM-Front-End-Developer-Professional-Certificate.git`
@@ -65,7 +65,7 @@ Welcome to the repository for my IBM Front-End Developer Professional Certificat
 Include any reflections on your learning journey, challenges faced, and lessons learned. This section adds a personal touch to your repository.
 
 ## Author
-- Your Name
-- Contact Information
+- BasZeroCode
+- [Contact Information](https://www.linkedin.com/in/muhd-abbas/)
 
 Feel free to explore individual course and project folders for more details!
