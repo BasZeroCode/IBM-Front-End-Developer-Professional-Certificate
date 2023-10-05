@@ -108,3 +108,16 @@
 - How it should be used?
 - The
 
+### **2. User Requirements Specification (URS)**
+
+- Describe business need and end-user expectations.
+- Who is the user?
+- What is the function that needs to be performed?
+- Why does the user want this functionality?
+- This is usually confirmed during acceptance testing and often combined into SRS.
+
+### **3. System Requirements Specification (SysRS)**
+
+- Outlines requirements of the system.
+- Contains system capabilities, interfaces and user characteristics.
+- Policy, Regulation, Personnel, Performance, Security requirements and System acceptance criteria.
