@@ -1,4 +1,4 @@
-# Quiz Questions and Answers
+# Progamming Language and Organizations Quiz
 
 ## Question 1
 Which one of the following is an example of a compiled programming language?
