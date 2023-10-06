@@ -25,8 +25,7 @@ Components in a well-structured design should be ___________________.
  - [ ] loosely cohesive
        
 Question 4
-Which of the following is an advantage of using UML diagrams when designing software architecture? 1 point
-
+Which of the following is an advantage of using UML diagrams when designing software architecture? 
  - [ ] They help plan out structures and behaviors in advance of coding.
  - [ ] They help facilitate communication among team members.
  - [ ] They help developers navigate source code.
