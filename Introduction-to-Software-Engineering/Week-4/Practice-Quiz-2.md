@@ -2,7 +2,7 @@
 
 ## Question 1
 
-Which of the following is a characteristic of a distributed system? 1 / 1 point
+Which of the following is a characteristic of a distributed system? 
 
 - [ ] It is an interface for a database.
 - [ ] It focuses on the decomposition of a design into logical components.
@@ -13,7 +13,7 @@ This is a characteristic of distributed systems.
 
 ## Question 2
 
-Which term is best described by the statement, “entails the ability to add behavior to a component without changing other components?” 1 / 1 point
+Which term is best described by the statement, “entails the ability to add behavior to a component without changing other components?
 
 - [ ] Independent
 - [ ] Encapsulation
@@ -24,7 +24,7 @@ Extensibility entails the ability to add behavior to a component without changin
 
 ## Question 3
 
-True or false? A software application’s architecture can be designed as both peer-to-peer and event-driven. 1 / 1 point
+True or false? A software application’s architecture can be designed as both peer-to-peer and event-driven. 
 
 - [x] True
 - [ ] False
@@ -33,7 +33,7 @@ Peer-to-peer architecture is not mutually exclusive with an event-driven archite
 
 ## Question 4
 
-Which of the following best describes a staging environment? 1 / 1 point
+Which of the following best describes a staging environment? 
 
 - [ ] It is intended for the developers to use while they are actively coding the application.
 - [ ] It is intended for general users.
@@ -44,7 +44,7 @@ The staging environment replicates the production environment but is not intende
 
 ## Question 5
 
-What does the production environment take into account that pre-production environments do not? 1 / 1 point
+What does the production environment take into account that pre-production environments do not? 
 
 - [ ] Permissions
 - [x] Load
