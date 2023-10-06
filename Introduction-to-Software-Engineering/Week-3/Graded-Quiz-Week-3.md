@@ -2,7 +2,7 @@
 
 ## Question 1
 
-Which of the following is the generic term for referencing a program component such as a stored value, method, interface, or class by a custom-named label? 1 point
+Which of the following is the generic term for referencing a program component such as a stored value, method, interface, or class by a custom-named label? 
 
 - [ ] Container
 - [x] Identifier
@@ -11,7 +11,7 @@ Which of the following is the generic term for referencing a program component s
 
 ## Question 2
 
-Which one of the following applies to interpreted programming languages? 1 point
+Which one of the following applies to interpreted programming languages? 
 
 - [ ] Available to users who have the same operating system or a device that understands the same language
 - [ ] More difficult to write in, but creates faster applications
@@ -20,7 +20,7 @@ Which one of the following applies to interpreted programming languages? 1 point
 
 ## Question 3
 
-Which one of the following applies to a compiled programming language compared to an interpreted language? 1 point
+Which one of the following applies to a compiled programming language compared to an interpreted language? 
 
 - [ ] Better for websites and smaller processes that need to be repeated
 - [x] Takes longer to write the code, but it runs faster
@@ -29,7 +29,7 @@ Which one of the following applies to a compiled programming language compared t
 
 ## Question 4
 
-Which one of the following is an example of a low-level programming language? 1 point
+Which one of the following is an example of a low-level programming language? 
 
 - [ ] Pascal
 - [ ] Python
@@ -38,7 +38,7 @@ Which one of the following is an example of a low-level programming language? 1 
 
 ## Question 5
 
-Which of the following is a type of programming logic with only two values, "true" or "false", and is used in both branching and looping programming logic? 1 point
+Which of the following is a type of programming logic with only two values, "true" or "false", and is used in both branching and looping programming logic? 
 
 - [ ] Branching statements
 - [ ] “if-then-else” statement
@@ -47,7 +47,7 @@ Which of the following is a type of programming logic with only two values, "tru
 
 ## Question 6
 
-What are the three key standpoints for organizing code? 1 point
+What are the three key standpoints for organizing code? 
 
 - [ ] Maintainability, accessibility, and scalability
 - [x] Readability, maintainability, and scalability
@@ -56,7 +56,7 @@ What are the three key standpoints for organizing code? 1 point
 
 ## Question 7
 
-Which of the following is also often referred to as a scripting language? 1 point
+Which of the following is also often referred to as a scripting language? 
 
 - [x] An interpreted programming language
 - [ ] A query language
@@ -65,7 +65,7 @@ Which of the following is also often referred to as a scripting language? 1 poin
 
 ## Question 8
 
-Which of the following is a type of looping programming logic? 1 point
+Which of the following is a type of looping programming logic? 
 
 - [ ] while
 - [ ] if
@@ -74,7 +74,7 @@ Which of the following is a type of looping programming logic? 1 point
 
 ## Question 9
 
-Which of the following is the best type of identifier for a data item whose value does not change? 1 point
+Which of the following is the best type of identifier for a data item whose value does not change? 
 
 - [x] Constant
 - [ ] Array
@@ -83,7 +83,7 @@ Which of the following is the best type of identifier for a data item whose valu
 
 ## Question 10
 
-Which of the following is a software methodology that focuses on objects rather than functions? 1 point
+Which of the following is a software methodology that focuses on objects rather than functions? 
 
 - [ ] SDLC
 - [ ] Extreme programming
