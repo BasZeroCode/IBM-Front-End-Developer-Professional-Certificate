@@ -106,7 +106,6 @@
 - Establishes benchmarks.
 - Who has access to the SRS?
 - How it should be used?
-- The
 
 ### **2. User Requirements Specification (URS)**
 
