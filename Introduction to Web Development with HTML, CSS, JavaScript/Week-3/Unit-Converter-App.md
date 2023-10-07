@@ -28,10 +28,3 @@ You can preview the website [here](https://muabbasa8-5500.theiadocker-3-labs-pro
 ![Weight Conversion](file:///C:/Users/Abbas/New%20folder/Downloads/Screenshot%202023-10-07%20184700.png)
 
 ![Distance Conversion](file:///C:/Users/Abbas/New%20folder/Downloads/Screenshot%202023-10-07%20184714.png)
-
-## How to Run Locally
-
-1. Clone this repository:
-
-   ```bash
-   git clone https://github.com/your-username/your-repository.git
