@@ -10,7 +10,7 @@ Welcome to the repository for my IBM Front-End Developer Professional Certificat
 ## Courses Included
 1. **Introduction to Software Engineering**
    - [Course Link](https://www.coursera.org/learn/introduction-to-software-engineering?specialization=ibm-frontend-developer)
-   - Software engineering applies engineering principles to build efficient software systems through the Software Development Lifecycle (SDLC). Skills encompass software architecture, SDLC methodologies, and 
+   - This course applies engineering principles to build efficient software systems through the Software Development Lifecycle (SDLC). Skills encompass software architecture, SDLC methodologies, and 
      agile practices, leading to careers like Software Developer or Systems Analyst, requiring proficiency in programming and adaptability to emerging technologies.
 
 2. **Introduction to Web Development with HTML, CSS, JavaScript**
