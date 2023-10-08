@@ -15,7 +15,8 @@ Welcome to the repository for my IBM Front-End Developer Professional Certificat
 
 2. **Introduction to Web Development with HTML, CSS, JavaScript**
    - [Course Link](https://www.coursera.org/learn/introduction-to-web-development-with-html-css-javacript?specialization=ibm-frontend-developer)
-   - Brief description and key takeaways.
+   - Learn to create and style web pages, and enhance functionality through JavaScript. Gain practical skills to build interactive and dynamic websites, guided by IBM's expertise in the field. Perfect for those 
+     aspiring to start a career in web development.
 
 3. **Getting Started with Git and GitHub**
    - [Course Link](https://www.coursera.org/learn/getting-started-with-git-and-github?specialization=ibm-frontend-developer)
