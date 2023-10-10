@@ -20,7 +20,7 @@ Welcome to the repository for my IBM Front-End Developer Professional Certificat
 
 3. **Getting Started with Git and GitHub**
    - [Course Link](https://www.coursera.org/learn/getting-started-with-git-and-github?specialization=ibm-frontend-developer)
-   - I learned GitHub basic, how to push a repository with Git and how to pull and merge a request,and how to open new branch
+   - I learned GitHub basics, how to push a repository with Git and how to pull and merge a request,and how to open new branch
 
 4. **Developing Cloud Native Applications**
    - [Course Link](https://www.coursera.org/learn/developing-cloud-native-applications?specialization=ibm-frontend-developer)
@@ -44,14 +44,22 @@ Welcome to the repository for my IBM Front-End Developer Professional Certificat
 
 
 ## Projects
-1. **Project 1: Project Name**
+1. **Project 1: React Budget Allocation App**
    - Description: Brief overview of the project.
    - [Link to Project](replace-with-project1-link)
 
-2. **Project 2: Project Name**
-   - Description: Brief overview of the project.
+2. **Project 2: Interactive Sales App**
+   - Description: Using Figma and Thunkable
    - [Link to Project](replace-with-project2-link)
 
+3. **Project 3: Interest Rate Calculator**
+   - Description: Using HTML, CSS, JavaScript
+   - [Link to Project](replace-with-project2-link)
+
+
+4. **Project 4: Frontend Developer Capstron**
+   - Description: Fitness Monitor Website
+   - [Link to Project](replace-with-project2-link)
 ## Technologies Covered
 - HTML
 - CSS
