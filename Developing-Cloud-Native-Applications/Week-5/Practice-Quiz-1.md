@@ -42,8 +42,6 @@ JSON (JavaScript Object Notation) is a lightweight data interchange format that 
 - [ ] Enabling you to build cognitive applications
 - [x] All of the above
 
-All of the above
-
 IBM Watson performs various tasks, including revealing insights from large amounts of unstructured data, utilizing natural processing language, and machine learning technologies. It also enables the building of cognitive applications.
 
 ## Question 5
@@ -54,7 +52,5 @@ IBM Watson performs various tasks, including revealing insights from large amoun
 - [ ] PUT
 - [ ] CONNECT
 - [ ] GET
-
-POST
 
 In Postman, the POST request is commonly used to obtain an access token from IBM Cloud when interacting with a service. The POST method is used to submit data to be processed to a specified resource.
