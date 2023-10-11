@@ -25,7 +25,8 @@ Welcome to the repository for my IBM Front-End Developer Professional Certificat
      
 4. **Developing Cloud Native Applications**
    - [Course Link](https://www.coursera.org/learn/developing-cloud-native-applications?specialization=ibm-frontend-developer)
-   - Brief description and key takeaways.
+   - Learned in-depth knowledge of Cloud Native and DevOps methodologies and how to build and deploy code on the cloud through CI/CD tools. Key insights from this course encompass the hands-on creation of a 
+     Node.js application on IBM Cloud and the proficient implementation of REST APIs for efficient data storage and retrieval in a NoSQL Cloudant Database.
 
 5. **Developing Front-End Apps with React**
    - [Course Link](https://www.coursera.org/learn/developing-frontend-apps-with-react?specialization=ibm-frontend-developer)
