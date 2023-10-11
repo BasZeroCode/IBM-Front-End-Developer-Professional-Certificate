@@ -1,0 +1,522 @@
+{
+	"info": {
+		"_postman_id": "6b495746-a497-415d-827c-fe6fe354d1f0",
+		"name": "couchdb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authentication",
+			"item": [
+				{
+					"name": "couch-IAM",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{apikey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "apikey",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "urn:ibm:params:oauth:grant-type:apikey",
+									"type": "text"
+								},
+								{
+									"key": "apikey",
+									"value": "{{apikey}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iam.cloud.ibm.com/identity/token",
+							"protocol": "https",
+							"host": [
+								"iam",
+								"cloud",
+								"ibm",
+								"com"
+							],
+							"path": [
+								"identity",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "database",
+			"item": [
+				{
+					"name": "database-list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{host}}/_all_dbs",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"_all_dbs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "database-create",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{host}}/{{dbname}}",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{dbname}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "database-details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{host}}/{{dbname}}",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{dbname}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "database-bulk-insert",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"docs\":[{\n        \"value\":\"This is document 1\"\n    }, {\n        \"value\":\"This is document 2\"\n    }, {\n        \"value\":\"This is document 3\"\n    }]\n}"
+						},
+						"url": {
+							"raw": "https://{{host}}/{{dbname}}/_bulk_docs",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{dbname}}",
+								"_bulk_docs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "database-delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{host}}/{{dbname}}",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{dbname}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "documents",
+			"item": [
+				{
+					"name": "document-create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1111,\n  \"user_name\": \"hdeatonam111\",\n  \"first_name\": \"Hendrika\",\n  \"last_name\": \"Deaton\",\n  \"email\": \"hdeatonam@1688.com\",\n  \"gender\": \"Female\",\n  \"age\": 99,\n  \"ip_address\": \"171.252.77.106\",\n  \"city\": \"Druya\",\n  \"state\": null,\n  \"country\": \"Belarus\",\n  \"postal_code\": null\n}\n"
+						},
+						"url": {
+							"raw": "https://{{host}}/{{dbname}}",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{dbname}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "document-read",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{host}}/{{dbname}}/75a647ca9e80b0188703f95f3fde126a",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{dbname}}",
+								"75a647ca9e80b0188703f95f3fde126a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "document-update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"first_name\":\"upkarlidder\"\n}"
+						},
+						"url": {
+							"raw": "https://{{host}}/{{dbname}}/39dc7577b88bc6564b8c7ad381ca60e4?rev=1-836692fc93ac6c036886259628fcafbb",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{dbname}}",
+								"39dc7577b88bc6564b8c7ad381ca60e4"
+							],
+							"query": [
+								{
+									"key": "rev",
+									"value": "1-836692fc93ac6c036886259628fcafbb"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "document-delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{host}}/{{dbname}}/39dc7577b88bc6564b8c7ad381ca60e4?rev=2-2e237c7d1f4b0c05783f364504b5795c",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{dbname}}",
+								"39dc7577b88bc6564b8c7ad381ca60e4"
+							],
+							"query": [
+								{
+									"key": "rev",
+									"value": "2-2e237c7d1f4b0c05783f364504b5795c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "document-read-all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{host}}/{{dbname}}/_all_docs?limit=10",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{dbname}}",
+								"_all_docs"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": ""
+		},
+		{
+			"key": "dbname",
+			"value": "my_sample_db"
+		},
+		{
+			"key": "apikey",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
