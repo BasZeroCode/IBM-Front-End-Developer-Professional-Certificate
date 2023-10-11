@@ -1,0 +1,38 @@
+## Deploy an Node.js application that connects to IBM Cloudant
+
+theia@theiadocker-muabbasa8:/home/project$ git clone https://github.com/ibm-developer-skills-network/evisr-CloudNative_RESTAPI.git
+Cloning into 'evisr-CloudNative_RESTAPI'...
+remote: Enumerating objects: 30, done.
+remote: Counting objects: 100% (30/30), done.
+remote: Compressing objects: 100% (28/28), done.
+remote: Total 30 (delta 8), reused 10 (delta 0), pack-reused 0
+Unpacking objects: 100% (30/30), done.
+theia@theiadocker-muabbasa8:/home/project$ cd /home/project/evisr-CloudNative_RESTAPI
+theia@theiadocker-muabbasa8:/home/project/evisr-CloudNative_RESTAPI$ touch .env
+theia@theiadocker-muabbasa8:/home/project/evisr-CloudNative_RESTAPI$ ibmcloud ce application create --name myapp --build-source . --image us.icr.io/${SN_ICR_NAMESPACE}/myapp --registry-secret icr-secret
+Creating application 'myapp'...
+Packaging files to upload from source path '.'...
+Submitting build run 'myapp-run-231011-072826333'...
+Creating image 'us.icr.io/sn-labs-muabbasa8/myapp:231011-1128-znz27'...
+Waiting for build run to complete...
+Build run status: 'Running'
+Build run completed successfully.
+Run 'ibmcloud ce buildrun get -n myapp-run-231011-072826333' to check the build run status.
+Waiting for application 'myapp' to become ready.
+Configuration 'myapp' is waiting for a Revision to become ready.
+Ingress has not yet been reconciled.
+Waiting for load balancer to be ready.
+Run 'ibmcloud ce application get -n myapp' to check the application status.
+OK                                                
+
+https://myapp.18e6e037xsjv.us-south.codeengine.appdomain.cloud
+theia@theiadocker-muabbasa8:/home/project/evisr-CloudNative_RESTAPI$ ibmcloud ce app delete --name myapp
+Are you sure you want to delete application 'myapp'? [y/N]> y
+Deleting application 'myapp'...
+OK
+theia@theiadocker-muabbasa8:/home/project/evisr-CloudNative_RESTAPI$ ibmcloud ce app list
+Listing all applications...
+OK
+
+Name  Status  URL  Latest  Age  Conditions  Reason  
+theia@theiadocker-muabbasa8:/home/project/evisr-CloudNative_RESTAPI$ 
