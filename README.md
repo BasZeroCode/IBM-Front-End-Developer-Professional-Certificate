@@ -20,8 +20,9 @@ Welcome to the repository for my IBM Front-End Developer Professional Certificat
 
 3. **Getting Started with Git and GitHub**
    - [Course Link](https://www.coursera.org/learn/getting-started-with-git-and-github?specialization=ibm-frontend-developer)
-   - I learned GitHub basics, how to push a repository with Git and how to pull and merge a request,and how to open new branch
-
+   - Got the hang of Git basics: handling repos, pull requests, and branches. Diving into advanced stuff like Git Flow, interactive rebasing, and automation with Git hooks. Good at pull request best practices, 
+     Git aliases, and diverse workflows.
+     
 4. **Developing Cloud Native Applications**
    - [Course Link](https://www.coursera.org/learn/developing-cloud-native-applications?specialization=ibm-frontend-developer)
    - Brief description and key takeaways.
