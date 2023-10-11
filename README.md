@@ -67,6 +67,7 @@ Welcome to the repository for my IBM Front-End Developer Professional Certificat
 - JavaScript
 - React.js
 - Git/GitHub
+- IBM Cloud
 
 ## How to Run the Projects
 1. Clone this repository: `git clone https://github.com/your-username/IBM-Front-End-Developer-Professional-Certificate.git`
