@@ -1,0 +1,489 @@
+## IBM Cloud Code Engine
+
+ibmcloud ce project current
+theia@theiadocker-muabbasa8:/home/project$ ibmcloud ce project current
+Getting the current project context...
+OK
+
+Name:       Code Engine - sn-labs-muabbasa8  
+ID:         f74cead6-9255-4f37-89b1-3b2d262fdadc  
+Subdomain:  18dz7epj37wr  
+Domain:     us-south.codeengine.appdomain.cloud  
+Region:     us-south  
+
+Kubernetes Config:    
+Context:               18dz7epj37wr  
+Environment Variable:  export KUBECONFIG="/home/theia/.bluemix/plugins/code-engine/Code Engine - sn-labs-muabbasa8-f74cead6-9255-4f37-89b1-3b2d262fdadc.yaml"  
+theia@theiadocker-muabbasa8:/home/project$ ibmcloud code-engine application list
+Listing all applications...
+OK
+
+Name  Status  URL  Latest  Age  Conditions  Reason  
+theia@theiadocker-muabbasa8:/home/project$ ibmcloud ce app list
+Listing all applications...
+OK
+
+Name  Status  URL  Latest  Age  Conditions  Reason  
+theia@theiadocker-muabbasa8:/home/project$ ibmcloud ce app create --name helloworld --image docker.io/ibmcom/helloworld
+Creating application 'helloworld'...
+The Route is still working to reflect the latest desired specification.
+Configuration 'helloworld' is waiting for a Revision to become ready.
+Ingress has not yet been reconciled.
+Waiting for load balancer to be ready.
+Run 'ibmcloud ce application get -n helloworld' to check the application status.
+OK
+
+https://helloworld.18dz7epj37wr.us-south.codeengine.appdomain.cloud
+theia@theiadocker-muabbasa8:/home/project$ ibmcloud ce app get --name helloworld
+For troubleshooting information visit: https://cloud.ibm.com/docs/codeengine?topic=codeengine-troubleshoot-apps.
+Run 'ibmcloud ce application events -n helloworld' to get the system events of the application instances.
+Run 'ibmcloud ce application logs -f -n helloworld' to follow the logs of the application instances.
+OK
+
+Name:               helloworld  
+ID:                 6fe4cf5d-da8a-454e-94af-62d052085da9  
+Project Name:       Code Engine - sn-labs-muabbasa8  
+Project ID:         f74cead6-9255-4f37-89b1-3b2d262fdadc  
+Age:                61s  
+Created:            2023-10-11T04:11:12-04:00  
+URL:                https://helloworld.18dz7epj37wr.us-south.codeengine.appdomain.cloud  
+Cluster Local URL:  http://helloworld.18dz7epj37wr.svc.cluster.local  
+Console URL:        https://cloud.ibm.com/codeengine/project/us-south/f74cead6-9255-4f37-89b1-3b2d262fdadc/application/helloworld/configuration  
+Status Summary:     Application deployed successfully  
+
+Environment Variables:    
+  Type     Name          Value  
+  Literal  CE_APP        helloworld  
+  Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud  
+  Literal  CE_SUBDOMAIN  18dz7epj37wr  
+Image:                  docker.io/ibmcom/helloworld  
+Resource Allocation:      
+  CPU:                1  
+  Ephemeral Storage:  400M  
+  Memory:             4G  
+
+Revisions:     
+  helloworld-00001:    
+    Age:                61s  
+    Latest:             true  
+    Traffic:            100%  
+    Image:              docker.io/ibmcom/helloworld (pinned to 250026)  
+    Running Instances:  1  
+
+Runtime:       
+  Concurrency:    100  
+  Maximum Scale:  10  
+  Minimum Scale:  0  
+  Timeout:        300  
+
+Conditions:    
+  Type                 OK    Age  Reason  
+  ConfigurationsReady  true  43s    
+  Ready                true  30s    
+  RoutesReady          true  30s    
+
+
+Hello World from:
+. ___  __  ____  ____
+./ __)/  \(    \(  __)
+( (__(  O )) D ( ) _)
+.\___)\__/(____/(____)
+.____  __ _   ___  __  __ _  ____
+(  __)(  ( \ / __)(  )(  ( \(  __)
+.) _) /    /( (_ \ )( /    / ) _)
+(____)\_)__) \___/(__)\_)__)(____)
+
+Some Env Vars:
+--------------
+CE_APP=helloworld
+CE_DOMAIN=us-south.codeengine.appdomain.cloud
+CE_SUBDOMAIN=18dz7epj37wr
+HOME=/root
+HOSTNAME=helloworld-00001-deployment-77945d9b7f-wnhnr
+K_REVISION=helloworld-00001
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PORT=8080
+PWD=/
+SHLVL=1
+z=Set env var 'SHOW' to see all variables
+
+Events:        
+  Type    Reason   Age  Source              Messages  
+  Normal  Created  62s  service-controller  Created Configuration "helloworld"  
+  Normal  Created  62s  service-controller  Created Route "helloworld"  
+
+Instances:     
+  Name                                          Revision          Running  Status   Restarts  Age  
+  helloworld-00001-deployment-77945d9b7f-xldgr  helloworld-00001  3/3      Running  0         61s  
+
+
+## Deploying the first application
+
+ibmcloud ce app list
+Listing all applications...
+OK
+
+Name        Status  URL                                                                  Latest            Age    Conditions  Reason  
+helloworld  Ready   https://helloworld.18dz7epj37wr.us-south.codeengine.appdomain.cloud  helloworld-00001  6m18s  3 OK / 3      
+
+theia@theiadocker-muabbasa8:/home/project$ ibmcloud ce application create --name myapp --build-source https://github.com/BasZeroCode/ynxgb-ci_cd_example --build-context-dir sample --image us.icr.io/${SN_ICR_NAMESPACE}/myapp --registry-secret icr-secret
+Creating application 'myapp'...
+Submitting build run 'myapp-run-231011-041936686'...
+Creating image 'us.icr.io/sn-labs-muabbasa8/myapp:231011-0819-vw11l'...
+Waiting for build run to complete...
+Build run status: 'Running'
+Build run completed successfully.
+Run 'ibmcloud ce buildrun get -n myapp-run-231011-041936686' to check the build run status.
+Waiting for application 'myapp' to become ready.
+Configuration 'myapp' is waiting for a Revision to become ready.
+Ingress has not yet been reconciled.
+Waiting for load balancer to be ready.
+Run 'ibmcloud ce application get -n myapp' to check the application status.
+OK                                                
+
+https://myapp.18dz7epj37wr.us-south.codeengine.appdomain.cloud
+theia@theiadocker-muabbasa8:/home/project$ ibmcloud ce app get --name myapp
+For troubleshooting information visit: https://cloud.ibm.com/docs/codeengine?topic=codeengine-troubleshoot-apps.
+Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
+Run 'ibmcloud ce application logs -f -n myapp' to follow the logs of the application instances.
+OK
+
+Name:               myapp  
+ID:                 dd45e51d-2e8d-4e7b-aac6-a299a05394ab  
+Project Name:       Code Engine - sn-labs-muabbasa8  
+Project ID:         f74cead6-9255-4f37-89b1-3b2d262fdadc  
+Age:                87s  
+Created:            2023-10-11T04:19:39-04:00  
+URL:                https://myapp.18dz7epj37wr.us-south.codeengine.appdomain.cloud  
+Cluster Local URL:  http://myapp.18dz7epj37wr.svc.cluster.local  
+Console URL:        https://cloud.ibm.com/codeengine/project/us-south/f74cead6-9255-4f37-89b1-3b2d262fdadc/application/myapp/configuration  
+Status Summary:     Application deployed successfully  
+
+Environment Variables:    
+  Type     Name          Value  
+  Literal  CE_APP        myapp  
+  Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud  
+  Literal  CE_SUBDOMAIN  18dz7epj37wr  
+Image:                  us.icr.io/sn-labs-muabbasa8/myapp:231011-0819-vw11l  
+Resource Allocation:      
+  CPU:                1  
+  Ephemeral Storage:  400M  
+  Memory:             4G  
+Registry Secrets:         
+  icr-secret  
+
+Revisions:            
+  myapp-00001:    
+    Age:                87s  
+    Latest:             true  
+    Traffic:            100%  
+    Image:              us.icr.io/sn-labs-muabbasa8/myapp:231011-0819-vw11l (pinned to abcdc0)  
+    Running Instances:  1  
+
+Runtime:              
+  Concurrency:    100  
+  Maximum Scale:  10  
+  Minimum Scale:  0  
+  Timeout:        300  
+
+Build Information:    
+  Build Run Name:     myapp-run-231011-041936686  
+  Build Type:         git  
+  Build Strategy:     dockerfile-medium  
+  Timeout:            600  
+  Source:             https://github.com/BasZeroCode/ynxgb-ci_cd_example  
+  Context Directory:  sample  
+  Dockerfile:         Dockerfile  
+                      
+  Build Run Summary:  Succeeded  
+  Build Run Status:   Succeeded  
+  Build Run Reason:   All Steps have completed executing  
+  Run 'ibmcloud ce buildrun get -n myapp-run-231011-041936686' for details.  
+
+Conditions:           
+  Type                 OK    Age  Reason  
+  ConfigurationsReady  true  51s    
+  Ready                true  37s    
+  RoutesReady          true  37s    
+
+Events:               
+  Type    Reason   Age  Source              Messages  
+  Normal  Created  88s  service-controller  Created Configuration "myapp"  
+  Normal  Created  88s  service-controller  Created Route "myapp"  
+
+Instances:            
+  Name                                     Revision     Running  Status   Restarts  Age  
+  myapp-00001-deployment-7cd5c88cdd-lmfxt  myapp-00001  3/3      Running  0         69s  
+
+Instances:            
+  Name                                     Revision     Running  Status   Restarts  Age  
+  myapp-00001-deployment-7cd5c88cdd-lmfxt  myapp-00001  3/3      Running  0         69s  
+theia@theiadocker-muabbasa8:/home/project$ ibmcloud ce application update --name myapp --build-source https://github.com/BasZeroCode/ynxgb-ci_cd_example --build-context-dir sample --image us.icr.io/${SN_ICR_NAMESPACE}/myapp --registry-secret icr-secret
+Updating application 'myapp' to latest revision.
+Submitting build run 'myapp-run-231011-042519023'...
+Creating image 'us.icr.io/sn-labs-muabbasa8/myapp:231011-0825-ml41g'...
+Waiting for build run to complete...
+Build run status: 'Running'
+Build run completed successfully.
+Run 'ibmcloud ce buildrun get -n myapp-run-231011-042519023' to check the build run status.
+Waiting for application 'myapp' to become ready.
+Traffic is not yet migrated to the latest revision.
+Ingress has not yet been reconciled.
+Waiting for load balancer to be ready.
+Run 'ibmcloud ce application get -n myapp' to check the application status.
+OK                                                
+
+https://myapp.18dz7epj37wr.us-south.codeengine.appdomain.cloud
+theia@theiadocker-muabbasa8:/home/project$ ibmcloud ce app update
+NAME:
+  update - Update an application.
+
+USAGE:
+  update --name APP_NAME [options...]
+
+OPTIONS:
+  --name                         Required. The name of the application.  
+                                 Aliases: -n value  
+                                   
+  --argument                     Set arguments for the application. This option can be  
+                                 specified multiple times.  (accepts multiple inputs)  
+                                 Aliases: --arg, -a value  
+                                   
+  --arguments-clear              Clear application arguments. (default: false)  
+                                 Aliases: --ac  
+                                   
+  --build-clear                  Remove the association of a build from this application.  
+                                 (default: false)  
+                                 Aliases: --bc  
+                                   
+  --build-commit                 The commit, tag, or branch in the source repository to pull.  
+                                 Aliases: --commit, --bcm, --cm, --revision value  
+                                   
+  --build-commit-clear           Clear the commit, tag, or branch in the source repository to  
+                                 pull. (default: false)  
+                                 Aliases: --commit-clear, --bcmc, --cmc  
+                                   
+  --build-context-dir            The directory in the repository that contains the buildpacks  
+                                 file or the Dockerfile.  
+                                 Aliases: --context-dir, --bcdr, --cdr value  
+                                   
+  --build-dockerfile             The path to the Dockerfile. (default: "Dockerfile")  
+                                 Aliases: --dockerfile, --bdf, --df value  
+                                   
+  --build-git-repo-secret        The name of the Git repository access secret to access the  
+                                 private repository containing the source code to build your  
+                                 container image.  
+                                 Aliases: --git-repo-secret, --bgrs, --grs, --repo value  
+                                   
+  --build-git-repo-secret-clear  Clear the Git repository access secret. (default: false)  
+                                 Aliases: --git-repo-secret-clear, --bgrsc, --grsc  
+                                   
+  --build-size                   The size to use for the build, which determines the amount of  
+                                 resources used. Valid values include small, medium, large,  
+                                 xlarge. For details, see https://cloud.ibm.com/docs/codeengin  
+                                 e?topic=codeengine-plan-build#build-size. (default: "medium")  
+                                 Aliases: --size, --bsz, --sz value  
+                                   
+  --build-source                 The URL of the Git repository or the path to local source.  
+                                 Aliases: --source, --bsrc, --src value  
+                                   
+  --build-strategy               The strategy to use for building the image. Valid values are  
+                                 'dockerfile' and 'buildpacks'. (default: "dockerfile")  
+                                 Aliases: --strategy, --bstr, --str value  
+                                   
+  --build-timeout                The amount of time, in seconds, that can pass before the  
+                                 build must succeed or fail. (default: 600)  
+                                 Aliases: --bto value  
+                                   
+  --cluster-local                Deploy the application with a project-only endpoint. Setting  
+                                 a project-only endpoint means that your app is not accessible  
+                                 from the public internet and network access is only possible  
+                                 from other Code Engine components that are running in the  
+                                 same project. (default: false)  
+                                 Aliases: --cl  
+                                   
+  --command                      Set commands for the application. This option can be  
+                                 specified multiple times.  (accepts multiple inputs)  
+                                 Aliases: --cmd, -c value  
+                                   
+  --commands-clear               Clear application commands. (default: false)  
+                                 Aliases: --cc  
+                                   
+  --concurrency                  The maximum number of requests that can be processed  
+                                 concurrently per instance. (default: 0)  
+                                 Aliases: --cn value  
+                                   
+  --concurrency-target           The threshold of concurrent requests per instance at which  
+                                 one or more additional instances are created. Use this value  
+                                 to scale up instances based on concurrent number of requests.  
+                                 This option defaults to the value of the 'concurrency'  
+                                 option, if not specified. (default: 0)  
+                                 Aliases: --ct value  
+                                   
+  --cpu value                    The amount of CPU set for the instance of the application.  
+                                 For valid values see https://cloud.ibm.com/docs/codeengine?to  
+                                 pic=codeengine-mem-cpu-combo. (default: 0)  
+                                   
+  --env                          Set environment variables in the application. Must be in  
+                                 NAME=VALUE format. This option can be specified multiple  
+                                 times.  (accepts multiple inputs)  
+                                 Aliases: -e value  
+                                   
+  --env-from-configmap           Set environment variables from the key-value pairs that are  
+                                 stored in this configmap. Provide NAME to reference the full  
+                                 configmap, or PREFIX=NAME to reference the full configmap  
+                                 where each key is prefixed with PREFIX, or NAME:KEY_A,KEY_B  
+                                 to reference individual keys. To specify a new name for a  
+                                 referenced key, use format NAME:NEW_KEY_NAME=KEY_A. This  
+                                 option can be specified multiple times.  (accepts multiple  
+                                 inputs)  
+                                 Aliases: --env-cm value  
+                                   
+  --env-from-configmap-rm        Remove environment variable references to full configmaps by  
+                                 using the configmap name. This option can be specified  
+                                 multiple times.  (accepts multiple inputs)  
+                                 Aliases: --env-cm-rm value  
+                                   
+  --env-from-secret              Set environment variables from the key-value pairs that are  
+                                 stored in this secret. Provide NAME to reference the full  
+                                 secret, or PREFIX=NAME to reference the full secret where  
+                                 each key is prefixed with PREFIX, or NAME:KEY_A,KEY_B to  
+                                 reference individual keys. To specify a new name for a  
+                                 referenced key, use format NAME:NEW_KEY_NAME=KEY_A. This  
+                                 option can be specified multiple times.  (accepts multiple  
+                                 inputs)  
+                                 Aliases: --env-sec value  
+                                   
+  --env-from-secret-rm           Remove environment variable references to full secrets by  
+                                 using the secret name. This option can be specified multiple  
+                                 times.  (accepts multiple inputs)  
+                                 Aliases: --env-sec-rm value  
+                                   
+  --env-rm value                 Remove environment variables by using their KEY. This option  
+                                 can be specified multiple times.  (accepts multiple inputs)  
+                                   
+  --ephemeral-storage            The amount of ephemeral storage to set for the instance of  
+                                 the application. Use 'M' for megabytes or 'G' for gigabytes.  
+                                 Aliases: --es value  
+                                   
+  --force                        Do not verify the existence of specified configmap and secret  
+                                 references. (default: false)  
+                                 Aliases: -f  
+                                   
+  --image                        The name of the image that is used for this application. The  
+                                 format is 'REGISTRY/NAMESPACE/REPOSITORY:TAG' where  
+                                 'REGISTRY' and 'TAG' are optional. If 'REGISTRY' is not  
+                                 specified, the default is 'docker.io'. If 'TAG' is not  
+                                 specified, the default is 'latest'.  
+                                 Aliases: -i value  
+                                   
+  --max-scale                    The maximum number of instances that can be used for this  
+                                 application. If you set this value to '0', the application  
+                                 scales as needed. The application scaling is limited only by  
+                                 the instances per the resource quota for the project of your  
+                                 application. See  
+                                 https://cloud.ibm.com/docs/codeengine?topic=codeengine-limits.  
+                                 (default: 0)  
+                                 Aliases: --max, --maxscale value  
+                                   
+  --memory                       The amount of memory set for the instance of the application.  
+                                 Use 'M' for megabytes or 'G' for gigabytes. For valid values  
+                                 see https://cloud.ibm.com/docs/codeengine?topic=codeengine-me  
+                                 m-cpu-combo.  
+                                 Aliases: -m value  
+                                   
+  --min-scale                    The minimum number of instances that can be used for this  
+                                 application. (default: 0)  
+                                 Aliases: --min, --minscale value  
+                                   
+  --mount-configmap              Mount a configmap. The format is  
+                                 MOUNT_DIRECTORY=CONFIGMAP_NAME. This option can be specified  
+                                 multiple times.  (accepts multiple inputs)  
+                                 Aliases: --mount-cm value  
+                                   
+  --mount-rm value               Remove a mounted volume by using its mount directory. This  
+                                 option can be specified multiple times.  (accepts multiple  
+                                 inputs)  
+                                   
+  --mount-secret                 Mount a secret. The format is MOUNT_DIRECTORY=SECRET_NAME.  
+                                 This option can be specified multiple times.  (accepts multiple  
+                                 inputs)  
+                                 Aliases: --mount-sec value  
+                                   
+  --no-cluster-local             Deploy the application with a public endpoint. The  
+                                 application deploys such that it can receive requests from  
+                                 the public internet or from components within the Code Engine  
+                                 project. (default: true)  
+                                 Aliases: --ncl  
+                                   
+  --no-wait                      Update the application and do not wait for the application to  
+                                 be ready. (default: false)  
+                                 Aliases: --nw  
+                                   
+  --output                       Output format. Valid values are 'json', 'yaml',  
+                                 'jsonpath=JSONPATH_EXPRESSION',  
+                                 'jsonpath-as-json=JSONPATH_EXPRESSION', 'url', and  
+                                 'project-url'.  
+                                 Aliases: -o value  
+                                   
+  --port                         The port where the application listens. The format is  
+                                 NAME:PORT, where NAME is optional. If NAME is specified,  
+                                 valid values are 'h2c', or 'http1'. When NAME is not  
+                                 specified or is 'http1', the port uses HTTP 1.1. When NAME is  
+                                 'h2c', the port uses unencrypted HTTP 2.  
+                                 Aliases: -p value  
+                                   
+  --quiet                        Specify this option to reduce the output of the command.  
+                                 (default: false)  
+                                 Aliases: -q  
+                                   
+  --rebuild                      Rebuild image from source. (default: false)  
+                                   
+  --registry-secret              The name of the image registry access secret. The image  
+                                 registry access secret is used to authenticate with a private  
+                                 registry when you download the container image. Run 'ibmcloud  
+                                 ce registry create' to create a registry secret.  
+                                 Aliases: --rs value  
+                                   
+  --registry-secret-clear        Clear the image registry access secret. (default: false)  
+                                 Aliases: --rsc  
+                                   
+  --request-timeout              The amount of time that is allowed for a running application  
+                                 to respond to a request. (default: 0)  
+                                 Aliases: --rt, --timeout, -t value  
+                                   
+  --revision-name                The name of the revision. Use a revision name that is unique  
+                                 within the application.  
+                                 Aliases: --rn value  
+                                   
+  --service-account              The name of the service account. For built-in service  
+                                 accounts, you can use the shortened names 'manager', 'none',  
+                                 'reader', and 'writer'.  
+                                 Aliases: --sa value  
+                                   
+  --service-account-clear        Clear the service account. (default: false)  
+                                 Aliases: --sac  
+                                   
+  --user                         The user ID (UID) to run the application (e.g., 1001).  
+                                 (default: 0)  
+                                 Aliases: -u value  
+                                   
+  --visibility                   The visibility for the application. Valid values are  
+                                 'public', 'private' and 'project'. Visibility can only be  
+                                 'private' if the project supports application private  
+                                 visibility.  
+                                 Aliases: -v value  
+                                   
+  --wait                         Update the application and wait for the application to be  
+                                 ready. (default: true)  
+                                 Aliases: -w  
+                                   
+  --wait-timeout                 The length of time in seconds to wait for the application to  
+                                 be updated. Ignored if 'no-wait' is set. (default: 600)  
+                                 Aliases: --wto value  
+                                   
+  --help                         Show help. (default: false)  
+                                 Aliases: -h  
+                                   
+FAILED
+Required option 'name' is not set.
