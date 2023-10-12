@@ -1,7 +1,5 @@
 # React Components Graded Quiz Week 2
 
-# React and JavaScript Quiz
-
 ## Question 1
 **What is a State?**
 
