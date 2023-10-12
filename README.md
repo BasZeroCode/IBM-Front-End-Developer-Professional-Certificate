@@ -46,7 +46,7 @@ Welcome to the repository for my IBM Front-End Developer Professional Certificat
 
 
 ## Projects
-1. **Project 1: React Budget Allocation App**
+1. **Project 1: Budget Allocation App with React**
    - Description: Brief overview of the project.
    - [Link to Project](replace-with-project1-link)
 
@@ -58,10 +58,10 @@ Welcome to the repository for my IBM Front-End Developer Professional Certificat
    - Description: Using HTML, CSS, JavaScript
    - [Link to Project](replace-with-project2-link)
 
-
-4. **Project 4: Frontend Developer Capstron**
+4. **Project 4: ToDoList App with React**
    - Description: Fitness Monitor Website
    - [Link to Project](replace-with-project2-link)
+     
 ## Technologies Covered
 - HTML
 - CSS
