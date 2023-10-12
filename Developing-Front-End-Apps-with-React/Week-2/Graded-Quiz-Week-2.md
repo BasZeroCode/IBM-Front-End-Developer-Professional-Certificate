@@ -1,52 +1,97 @@
 # React Components Graded Quiz Week 2
 
+# React and JavaScript Quiz
+
 ## Question 1
-**Which of the following is an example of shared state?**
+**What is a State?**
 
-- [ ] An application with a button and counter
-- [ ] Hiding and showing information
-- [ ] Tags for ID, name, and age
-- [x] List of all orders in an order application
+- [ ] A component’s render function that returns data about an attribute
+- [ ] A piece of software that passes data between React components
+- [ ] A parent component function that takes a string argument
+- [x] An object that contains information about the component
 
-Shared state refers to data that can be accessed by multiple components. In the context of the options provided, a list of all orders in an order application implies shared state as it's likely to be accessed by different parts of the application.
+In React, the state is an object that holds information about the component and its behavior.
 
 ## Question 2
-**What are the phases of a React component’s lifecycle?**
+**What is used to pass data between React components?**
 
-- [ ] Mounting and unmounting
-- [ ] Invoke and render
-- [x] Mounting, updating, and unmounting
-- [ ] Rendering, data send, and callback
+- [ ] HTML attribute
+- [ ] Shared state
+- [x] Prop
+- [ ] Local state
 
-The phases of a React component's lifecycle are Mounting, Updating, and Unmounting.
+Props are used to pass data between React components, allowing the parent component to pass information down to its child components.
 
 ## Question 3
-**What happens in the mounting phase?**
+**What do you use to pass data from child components to parent components?**
+1 point
+- [x] Render Callback
+- [ ] State Method
 
-- [ ] User events cause the component’s states and props to change
-- [ ] The component is removed from the DOM
-- [x] The component is added to the DOM
-- [ ] The component is re-rendered
-
-In the mounting phase, the component is added to the DOM for the first time.
+Render Callbacks, often used as functions passed as props, can be utilized to pass data from child components to parent components.
 
 ## Question 4
-**What is used to make the call to a server asynchronous?**
+**When does a component lifecycle start?**
 
-- [ ] POST
-- [ ] UPDATE
-- [ ] GET
-- [x] Promise
+- [ ] When the component is removed from the DOM
+- [x] When components are created or mounted on the DOM
+- [ ] When the state of the component first changes
+- [ ] When a user clicks the mouse or presses the keyboard
 
-Promises are used to handle asynchronous operations, such as making calls to a server and handling the response.
+The component lifecycle starts when components are created or mounted on the DOM.
 
 ## Question 5
-**What is testing?**
+**What do you use to pass data from parent components to child components?**
 
-- [ ] Rejection of continuous integration
-- [ ] Manual verification that code is bug-free
-- [ ] A modular construction of a complex application
-- [x] A line-by-line review of how your code will execute
+- [ ] State
+- [x] Prop
+- [ ] Callback
+- [ ] Method
 
-Testing involves systematically evaluating a system or component to ensure it behaves as expected. It can include various approaches such as automated testing, manual testing, and continuous integration.
+While state can be used, it's common to pass data from parent components to child components using props, which are properties passed from parent to child.
 
+## Question 6
+**Which function is invoked right after the component is mounted on the DOM?**
+
+- [ ] componentWillMount
+- [ ] componentWillUnmount
+- [x] componentDidMount
+
+`componentDidMount` is invoked immediately after a component is mounted on the DOM.
+
+## Question 7
+**What do you use to make a call to an external server asynchronous?**
+
+- [x] Promises
+- [ ] State Method
+- [ ] Props
+
+Promises are used to handle asynchronous operations like making calls to external servers.
+
+## Question 8
+**What does the `postDataToServer` method do?**
+
+- [ ] Sets a component with a user state to “None Logged In”
+- [ ] Requests all objects in the `usercollection` destination
+- [ ] Creates a JSON object and pushes it into the `usercollection` array
+- [x] Sends the data to the server and updates the response from the server to the component’s state `completionStatus`
+
+The `postDataToServer` method sends data to the server and updates the component's state based on the server's response.
+
+## Question 9
+**What are the phases of a component test?**
+
+- [ ] Chai, Sinon, and Mocha
+- [x] Arrange, Act, and Assert
+
+The typical phases of a component test are Arrange (setup), Act (perform the action), and Assert (verify the result).
+
+## Question 10
+**What are the two testing approaches?**
+
+- [x] Component and end-to-end
+- [ ] Simulated and authenticated
+- [ ] Mocha and Chai
+- [ ] Regression and event
+
+The two common testing approaches are Component testing (testing individual components in isolation) and End-to-End testing (testing the entire application as a whole).
