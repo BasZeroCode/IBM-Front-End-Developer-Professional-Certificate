@@ -27,3 +27,16 @@ This will start the react development server on port 3000.
 Click on the Launch Application button below or the SkillsNetwork Toolbox logo and from the options choose OTHER and click Launch Application. 
 Enter the port number 3000 and click on the arrow mark to launch the application.
 
+**Compiled successfully!**
+
+**You can now view myfirstapp in the browser.**
+
+  **Local:            http://localhost:3000
+  On Your Network:  http://172.17.33.179:3000**
+
+**Note that the development build is not optimized.
+To create a production build, use yarn build.**
+
+**webpack compiled successfully**
+
+
